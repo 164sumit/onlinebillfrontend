@@ -26,9 +26,9 @@ const BatchMail = () => {
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
       const jsonData = XLSX.utils.sheet_to_json(sheet);
-      
+      const url=config.backendUrl;
       try {
-        const { data } = await axios.post(`http://localhost:5000/api/v1/batchmail`, {jsonData});
+        const { data } = await axios.post(`${url}/batchmail`, {jsonData});
         setResponse(data);
         alert('File uploaded successfully');
       } catch (error) {

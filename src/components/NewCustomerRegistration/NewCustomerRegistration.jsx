@@ -29,7 +29,7 @@ const NewCustomerRegistration = () => {
                 }
             )
             console.log(data);
-            if(data.success){
+            if(data.sucess){
                 alert(`Registration successful for customer ${name} with account no. ${accountNo}`);
                 navigate("/dashboard");
             }
